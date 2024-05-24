@@ -1,7 +1,9 @@
 import Spinner from "../Spinner/Spinner";
 import CountryItem from "../CountryItem/CountryItem";
 import styles from "./CountryList.module.css";
-function CountryList({ cities, isLoading }) {
+import { useCities } from "../../Contexts/CitiesContext";
+function CountryList() {
+  const {isLoading,cities}=useCities();
   if (isLoading) return <Spinner />;
   const countries = cities.reduce((currArray, city) => {
     if (!currArray.map((el) => el.country).includes(city.country)) {

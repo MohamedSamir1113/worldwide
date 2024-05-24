@@ -10,6 +10,7 @@ const navigate =useNavigate()
       <div className={styles.map}>
         <h1>Map</h1>
         <h1>position: {lat} {lng}</h1>
+        
       </div>
     </div>
   );
