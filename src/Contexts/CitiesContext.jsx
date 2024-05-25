@@ -35,9 +35,12 @@ function CitiesProvider({ children }) {
       setIsLoading(false);
     }
   }
+  function addCity(city) {
+    setCities(()=>[...cities,city])
+  }
   return (
     <>
-      <CitiesContext.Provider value={{ cities, isLoading ,currentCity,getCity}}>
+      <CitiesContext.Provider value={{ cities, isLoading ,currentCity,getCity,addCity}}>
         {children}
       </CitiesContext.Provider>
     </>

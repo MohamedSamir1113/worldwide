@@ -1,8 +1,11 @@
 .app {
   height: 100vh;
-  padding: 2.4rem;
-  overscroll-behavior-y: none;
-  position: relative;
-  display: flex;
-  /* background-color: red; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
 }

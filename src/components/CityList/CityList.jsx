@@ -6,6 +6,7 @@ import styles from "./CityList.module.css";
 
 function CityList() {
   const {isLoading,cities}=useCities()
+  
   if (isLoading) return <Spinner />;
 
   return (

@@ -3,6 +3,7 @@ import styles from "./City.module.css";
 import { useEffect } from "react";
 import { useCities } from "../../Contexts/CitiesContext";
 import Button from "../Button/Button";
+import Spinner from "../Spinner/Spinner";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -16,17 +17,21 @@ const formatDate = (date) =>
 
 function City() {
   const { id } = useParams(); //recieve the params from the url
-const navigate=useNavigate()
-  const { getCity, currentCity } = useCities();
+
+  const navigate=useNavigate()
+
+  const { getCity, currentCity ,isLoading} = useCities();
   useEffect(
     function () {
       getCity(id);
     },
     [id]
   );
-  //TEMP DATA
+  
 
   const { cityName, emoji, date, notes } = currentCity;
+
+  if(isLoading) return <Spinner/>
 
   return (
     <>
