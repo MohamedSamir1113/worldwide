@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { useURLPosition } from "../../hooks/useURLPositon";
 import { useCities } from "../../Contexts/CitiesContext";
 import Message from "../Message/Message"
-//import { type } from "@testing-library/user-event/dist/type";
 import Spinner from "../Spinner/Spinner";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -19,12 +18,7 @@ export function convertToEmoji(countryCode) {
     .map((char) => 127397 + char.charCodeAt());
   return String.fromCodePoint(...codePoints);
 }
-const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date));
+
   
   const intitialState = {
   isGeoLoading: false,
@@ -138,13 +132,6 @@ function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        {/* <input
-          id="date"
-          onChange={(e) =>
-            dispatch({ type: "setDate", payload: e.target.value })
-          }
-          value={date}
-        /> */}
         <DatePicker id="date" selected={date} onChange={(date) =>
             dispatch({ type: "setDate", payload: date })
           } dateFormat="dd/MM/yyyy"/>

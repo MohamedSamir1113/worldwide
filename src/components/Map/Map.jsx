@@ -8,7 +8,7 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import styles from "./Map.module.css";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useCities } from "../../Contexts/CitiesContext";
 import { useGeoLocation } from "../../hooks/useGeoLocation";
 import Button from "../Button/Button";
@@ -68,12 +68,12 @@ function Map() {
 
 export default Map;
 
-function ChangeCenter({ position }) {
+const ChangeCenter=memo( function ChangeCenter({ position }) {
   const map = useMap();
   map.setView(position);
 
   return null;
-}
+})
 
 function DetectClick() {
   const navigate = useNavigate();
