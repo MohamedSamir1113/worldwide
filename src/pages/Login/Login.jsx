@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <main className={styles.login}>
-      <PageNav />
+     
       <div
         style={{
           minHeight: "80vh",

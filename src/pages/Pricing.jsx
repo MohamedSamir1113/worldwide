@@ -4,7 +4,7 @@ import PageNav from "../components/PageNav/PageNav";
 export default function Product() {
   return (
     <main className={styles.product}>
-      <PageNav />
+      
       <section>
         <div className={styles.content}>
           <h2>

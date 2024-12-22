@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color:  #242a2e;
 }
 
 .nav ul {

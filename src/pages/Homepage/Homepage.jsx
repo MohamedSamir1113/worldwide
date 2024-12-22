@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Homepage() {
   return (
     <main className={styles.homepage}>
-      <PageNav/>
+      
       <section>
         <h1>
           You travel the world.
